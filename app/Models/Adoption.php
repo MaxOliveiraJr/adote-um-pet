@@ -5,11 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Adocao extends Model
+class Adoption extends Model
 {
     use HasFactory;
 
-    protected $table = 'adocoes';
-
-    protected $fillable = ['email','valor','pet_id'];
+    protected $fillable = ['email','value','pet_id'];
 }
