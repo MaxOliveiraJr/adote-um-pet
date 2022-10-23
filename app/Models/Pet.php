@@ -9,4 +9,5 @@ class Pet extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name','history','photo'];
 }
