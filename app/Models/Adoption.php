@@ -9,5 +9,15 @@ class Adoption extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['email','value','pet_id'];
+    protected $fillable = ['email', 'value', 'pet_id'];
+
+    /**
+     *Define a relação da adoção com o pet
+     *
+     * @return belongsTo
+     */
+    public function pet()
+    {
+        return $this->belongsTo(Pet::class);
+    }
 }

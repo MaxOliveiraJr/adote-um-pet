@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class AdoptionController extends Controller
 {
+
+    public function index (){
+        return Adoption::with('pet')->get();
+    }
     public function store(Request $request)
     {
         $request->validate([
