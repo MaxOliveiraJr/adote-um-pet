@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\AdoptionCollection;
 use App\Models\Adoption;
 use Illuminate\Http\Request;
 
@@ -9,7 +10,9 @@ class AdoptionController extends Controller
 {
 
     public function index (){
-        return Adoption::with('pet')->get();
+        $adoptios = Adoption::with('pet')->get();
+
+        return new AdoptionCollection($adoptios);
     }
     public function store(Request $request)
     {
